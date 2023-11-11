@@ -8,8 +8,8 @@ interface AboutPageProps {}
 
 const AboutPage: React.FC<AboutPageProps> = ({}) => {
   return (
-    <>
-      <div className="grid top-0 left-0 h-screen w-full" data-scroll-container>
+    <div className="relative top-0 left-0 w-full min-h-full z-[2]">
+      <div className="grid top-0 left-0 h-screen w-full">
         <div className="flex items-center justify-center relative">
           <div className="hidden absolute top-1/2 left-1/2  text-white text-center -translate-x-1/2 -translate-y-1/2 z-10 text-3xl sm:text-2xl leading-[1.1 cursor-pointer">
             <h2 className="text-white ">Rizky Syahri Ramadhan</h2>
@@ -17,7 +17,6 @@ const AboutPage: React.FC<AboutPageProps> = ({}) => {
           <div
             className="top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 portrait:h-[112.5vw] portrait:w-[75vw] landscape:h-[75vh] landscape:w-[50vh] "
             data-wrapper-center
-            data-scroll
           >
             <Image
               src="https://res.cloudinary.com/rizkysyahri/image/upload/v1698762744/chai_arvpqk.jpg"
@@ -28,20 +27,13 @@ const AboutPage: React.FC<AboutPageProps> = ({}) => {
             />
           </div>
 
-          <div className="absolute bottom-0 left-0 w-full flex justify-between items-center z-10">
-            <p className="text-white text-xs font-light justify-end flex absolute bottom-0 right-0 w-full px-8 pb-8 ">
-              @me
-            </p>
-            <p className="text-white text-xs font-light justify-start flex absolute bottom-0 right-0 w-full px-8 pb-8 ">
-              Rizky Syahri Ramadhan
-            </p>
+          <div className="absolute bottom-0 left-0 w-full flex justify-between items-center px-8 pb-[3rem] text-xs sm:text-base text-white z-10">
+            <p className="">Rizky Syahri Ramadhan</p>
+            <p className="">@me</p>
           </div>
         </div>
 
-        <div
-          data-scroll
-          className="px-8 mt-[12rem] absolute top-full sm:mt-[20rem] sm:grid grid-cols-12 gap-x-[2rem] pb-[6rem] text-white"
-        >
+        <div className="px-8 mt-[12rem] absolute top-full sm:mt-[30rem] sm:grid grid-cols-12 gap-x-[2rem] pb-[6rem] text-white">
           <span className="block col-span-3 lg:col-span-5">About me</span>
           <p className="col-span-8 lg:col-span-6 text-md md:text-2xl leading-normal mt-2 sm:mt-0">
             I'm an Web Developer and I'am graduate of vocational high school.
@@ -88,7 +80,7 @@ const AboutPage: React.FC<AboutPageProps> = ({}) => {
           </footer>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

@@ -1,4 +1,4 @@
-'use client'
+"use client";
 
 // import LocomotiveScroll from "locomotive-scroll";
 import * as React from "react";
@@ -28,8 +28,14 @@ export const SmoothScrollProviders = ({
             new LocomotiveScroll({
               el: document.querySelector("[data-scroll-container]"),
               ...options,
-              mobile: true,
-              tablet: true,
+              mobile: {
+                smooth: true,
+                breakpoints: 0,
+              },
+              tablet: {
+                smooth: true,
+                breakpoints: 0,
+              },
             })
           );
         } catch (error) {
