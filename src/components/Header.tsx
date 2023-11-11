@@ -4,7 +4,7 @@ import React from "react";
 let navItems = [
   {
     title: "Project",
-    href: "/",
+    href: "/project",
   },
   {
     title: "Mail",
