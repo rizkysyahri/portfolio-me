@@ -8,7 +8,9 @@ interface AboutPageProps {}
 
 const AboutPage: React.FC<AboutPageProps> = ({}) => {
   return (
+    <div className="relative top-0 left-0 w-full min-h-full z-[2]" data-scroll-container>
     <div className="relative top-0 left-0 w-full min-h-full z-[2]">
+
       <div className="grid top-0 left-0 h-screen w-full">
         <div className="flex items-center justify-center relative">
           <div className="hidden absolute top-1/2 left-1/2  text-white text-center -translate-x-1/2 -translate-y-1/2 z-10 text-3xl sm:text-2xl leading-[1.1 cursor-pointer">
