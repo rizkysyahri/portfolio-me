@@ -8,15 +8,19 @@ interface AboutPageProps {}
 
 const AboutPage: React.FC<AboutPageProps> = ({}) => {
   return (
-    <div className="relative top-0 left-0 w-full min-h-full" data-scroll-container>
-      <div className="grid top-0 left-0 h-screen w-full bg-sky-400">
+    <div
+      className="relative top-0 left-0 w-full min-h-full"
+      data-scroll-container
+    >
+      <div className="grid top-0 left-0 h-screen w-full">
         <div className="flex items-center justify-center relative">
-          <div className="hidden absolute top-1/2 left-1/2  text-white text-center -translate-x-1/2 -translate-y-1/2 z-10 text-3xl sm:text-2xl leading-[1.1 cursor-pointer">
+          <div className="hidden absolute top-1/2 left-1/2 text-white text-center -translate-x-1/2 -translate-y-1/2 z-10 text-3xl sm:text-2xl leading-[1.1 cursor-pointer">
             <h2 className="text-white ">Rizky Syahri Ramadhan</h2>
           </div>
           <div
             className="top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 portrait:h-[112.5vw] portrait:w-[75vw] landscape:h-[75vh] landscape:w-[50vh] "
-            data-wrapper-center data-scroll data-scroll-speed={0.1}
+            data-wrapper-center
+            data-scroll
           >
             <Image
               src="https://res.cloudinary.com/rizkysyahri/image/upload/v1698762744/chai_arvpqk.jpg"
@@ -24,7 +28,6 @@ const AboutPage: React.FC<AboutPageProps> = ({}) => {
               className="object-cover w-full h-full -rotate-[5deg]"
               fill
               priority
-             
             />
           </div>
 
@@ -34,7 +37,10 @@ const AboutPage: React.FC<AboutPageProps> = ({}) => {
           </div>
         </div>
 
-        <div data-scroll className="bg-orange-300 px-8 mt-[8rem] absolute top-full sm:mt-[12rem] sm:grid grid-cols-12 gap-x-[2rem] pb-[6rem] text-white">
+        <div
+          data-scroll
+          className="px-8 mt-[8rem] absolute top-full sm:mt-[12rem] sm:grid grid-cols-12 gap-x-[2rem] pb-[6rem] text-white"
+        >
           <span className="block col-span-3 lg:col-span-5">About me</span>
           <p className="col-span-8 lg:col-span-6 text-md md:text-2xl leading-normal mt-2 sm:mt-0">
             I'm an Web Developer and I'am graduate of vocational high school.
