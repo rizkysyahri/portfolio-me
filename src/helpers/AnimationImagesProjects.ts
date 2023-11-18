@@ -19,7 +19,7 @@ export const scaleCenterImage = (
   tl.to(centerImageWrapperRef, {
     width: screenWidth > 768 ? "75vw" : "50vh",
     height: screenWidth > 768 ? "112.5vw" : "75vh",
-    rotate: "-5deg",
+    rotate: "5deg",
   }).to(
     centerImageRef,
     {
