@@ -18,7 +18,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={GeistSans.className}>
         <Header />
-        <SmoothScrollProviders options={{ smooth: true, smoothMobile: true }}>
+        <SmoothScrollProviders options={{ smooth: true}}>
           {children}
         </SmoothScrollProviders>
       </body>
