@@ -7,6 +7,7 @@ import Image from "next/image";
 interface AboutPageProps {}
 
 const AboutPage: React.FC<AboutPageProps> = ({}) => {
+
   return (
 
     <div className="relative top-0 left-0 w-full min-h-full" data-scroll-container>
@@ -18,13 +19,11 @@ const AboutPage: React.FC<AboutPageProps> = ({}) => {
           <div
             className="top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 portrait:h-[112.5vw] portrait:w-[75vw] landscape:h-[75vh] landscape:w-[50vh] "
             data-wrapper-center
-            data-scroll
-
           >
             <Image
               src="https://res.cloudinary.com/rizkysyahri/image/upload/v1698762744/chai_arvpqk.jpg"
               alt="..."
-              className="object-cover w-full h-full -rotate-[5deg]"
+              className="object-cover w-full h-full rotate-[5deg]"
               fill
               priority
              
@@ -38,7 +37,6 @@ const AboutPage: React.FC<AboutPageProps> = ({}) => {
         </div>
         
         <div
-          data-scroll
           className="px-8 mt-[8rem] absolute top-full sm:mt-[12rem] sm:grid grid-cols-12 gap-x-[2rem] pb-[6rem] text-white"
         >
 

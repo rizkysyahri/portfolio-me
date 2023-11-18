@@ -28,6 +28,13 @@ export const SmoothScrollProviders = ({
             new LocomotiveScroll({
               el: document.querySelector("[data-scroll-container]"),
               ...options,
+              scrollFromAnywhere: true,
+              smartphone: {
+                smooth: true,
+              },
+              tablet: {
+                smooth: true,
+              },
             })
           );
         } catch (error) {
