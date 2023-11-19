@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { GeistSans, GeistMono } from "geist/font";
 import "./globals.css";
 import Header from "@/components/Header";
+import { SmoothScrollProviders } from "@/providers/SmoothScrollProviders";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -18,7 +19,9 @@ export default function RootLayout({
       <body className={GeistSans.className}>
         <Header />
 
-        {children}
+          <SmoothScrollProviders options={{ smooth: true, smoothTouch: true }}>
+            {children}
+          </SmoothScrollProviders>
       </body>
     </html>
   );

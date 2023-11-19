@@ -3,14 +3,11 @@
 import Link from "next/link";
 import * as React from "react";
 import Image from "next/image";
-import { SmoothScrollProviders } from "@/providers/SmoothScrollProviders";
 
 interface ProjectPageProps {}
 
 const ProjectPage: React.FC<ProjectPageProps> = ({}) => {
   return (
-    <SmoothScrollProviders options={{ smooth: true, smoothTouch: true }}>
-
       <div className="relative top-0 left-0 h-auto" data-scroll-container>
         <div className="grid top-0 left-0 h-screen w-full">
           <div className="flex items-center justify-center relative">
@@ -81,7 +78,6 @@ const ProjectPage: React.FC<ProjectPageProps> = ({}) => {
           </div>
         </div>
       </div>
-    </SmoothScrollProviders>
   );
 };
 
