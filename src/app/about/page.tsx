@@ -3,16 +3,35 @@
 import Link from "next/link";
 import * as React from "react";
 import Image from "next/image";
+import { useScroll } from "framer-motion";
+import Lenis from "@studio-freight/lenis";
 
 interface AboutPageProps {}
 
 const AboutPage: React.FC<AboutPageProps> = ({}) => {
+  const container = React.useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: container,
+    offset: ["start end", "end start"],
+  });
+
+  React.useEffect(() => {
+    const lenis = new Lenis();
+
+    function raf(time: any) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+    requestAnimationFrame(raf);
+  });
 
   return (
-
-    <div className="relative top-0 left-0 w-full min-h-full" data-scroll-container>
+    <div className="relative top-0 left-0 w-full h-[150vh]">
       <div className="grid top-0 left-0 h-screen w-full">
-        <div className="flex items-center justify-center relative">
+        <div
+          className="flex items-center justify-center relative"
+          ref={container}
+        >
           <div className="hidden absolute top-1/2 left-1/2 text-white text-center -translate-x-1/2 -translate-y-1/2 z-10 text-3xl sm:text-2xl leading-[1.1 cursor-pointer">
             <h2 className="text-white ">Rizky Syahri Ramadhan</h2>
           </div>
@@ -26,7 +45,6 @@ const AboutPage: React.FC<AboutPageProps> = ({}) => {
               className="object-cover w-full h-full rotate-[5deg]"
               fill
               priority
-             
             />
           </div>
 
@@ -35,11 +53,7 @@ const AboutPage: React.FC<AboutPageProps> = ({}) => {
             <p className="">@me</p>
           </div>
         </div>
-        
-        <div
-          className="px-8 mt-[8rem] absolute top-full sm:mt-[12rem] sm:grid grid-cols-12 gap-x-[2rem] pb-[6rem] text-white"
-        >
-
+        <div className="px-8 mt-[8rem] absolute top-full sm:mt-[12rem] sm:grid grid-cols-12 gap-x-[2rem] pb-[6rem] text-white">
           <span className="block col-span-3 lg:col-span-5">About me</span>
           <p className="col-span-8 lg:col-span-6 text-md md:text-2xl leading-normal mt-2 sm:mt-0">
             I'm an Web Developer and I'am graduate of vocational high school.
