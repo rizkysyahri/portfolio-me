@@ -22,7 +22,6 @@ const AboutPage: React.FC<AboutPageProps> = ({}) => {
       lenis.raf(time);
       requestAnimationFrame(raf);
     }
-
     requestAnimationFrame(raf);
   });
 
@@ -54,7 +53,6 @@ const AboutPage: React.FC<AboutPageProps> = ({}) => {
             <p className="">@me</p>
           </div>
         </div>
-
         <div className="px-8 mt-[8rem] absolute top-full sm:mt-[12rem] sm:grid grid-cols-12 gap-x-[2rem] pb-[6rem] text-white">
           <span className="block col-span-3 lg:col-span-5">About me</span>
           <p className="col-span-8 lg:col-span-6 text-md md:text-2xl leading-normal mt-2 sm:mt-0">
