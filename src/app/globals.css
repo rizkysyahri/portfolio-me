@@ -2,33 +2,48 @@
 @tailwind components;
 @tailwind utilities;
 
-
 /*! locomotive-scroll v4.1.3 | MIT License | https://github.com/locomotivemtl/locomotive-scroll */
+
+html[data-scroll-orientation="horizontal"] body {
+  width: fit-content;
+}
+
+/* Only necessary with horizontal scrolling */
+html[data-scroll-orientation="horizontal"] [data-scroll-container] {
+  display: flex;
+}
+
 html.has-scroll-smooth {
-  overflow: hidden; }
+  overflow: hidden;
+}
 
 html.has-scroll-dragging {
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
-  user-select: none; }
+  user-select: none;
+}
 
 .has-scroll-smooth body {
-  overflow: hidden; }
+  overflow: hidden;
+}
 
 .has-scroll-smooth [data-scroll-container] {
-  min-height: 100vh; }
+  min-height: 100vh;
+}
 
 [data-scroll-direction="vertical"] [data-scroll-container] {
   height: 100vh;
   display: inline-block;
-  white-space: nowrap; }
+  white-space: nowrap;
+}
 
 [data-scroll-direction="vertical"] [data-scroll-section] {
   display: inline-block;
   vertical-align: top;
   white-space: nowrap;
-  height: 100%; }
+  height: 100%;
+}
 
 .c-scrollbar {
   position: absolute;
@@ -38,19 +53,26 @@ html.has-scroll-dragging {
   height: 100%;
   transform-origin: center right;
   transition: transform 0.3s, opacity 0.3s;
-  opacity: 0; }
-  .c-scrollbar:hover {
-    transform: scaleX(1.45); }
-  .c-scrollbar:hover, .has-scroll-scrolling .c-scrollbar, .has-scroll-dragging .c-scrollbar {
-    opacity: 1; }
-  [data-scroll-direction="vertical"] .c-scrollbar {
-    width: 100%;
-    height: 10px;
-    top: auto;
-    bottom: 0;
-    transform: scaleY(1); }
-    [data-scroll-direction="vertical"] .c-scrollbar:hover {
-      transform: scaleY(1.3); }
+  opacity: 0;
+}
+.c-scrollbar:hover {
+  transform: scaleX(1.45);
+}
+.c-scrollbar:hover,
+.has-scroll-scrolling .c-scrollbar,
+.has-scroll-dragging .c-scrollbar {
+  opacity: 1;
+}
+[data-scroll-direction="vertical"] .c-scrollbar {
+  width: 100%;
+  height: 10px;
+  top: auto;
+  bottom: 0;
+  transform: scaleY(1);
+}
+[data-scroll-direction="vertical"] .c-scrollbar:hover {
+  transform: scaleY(1.3);
+}
 
 .c-scrollbar_thumb {
   position: absolute;
@@ -62,14 +84,16 @@ html.has-scroll-dragging {
   border-radius: 10px;
   margin: 2px;
   cursor: -webkit-grab;
-  cursor: grab; }
-  .has-scroll-dragging .c-scrollbar_thumb {
-    cursor: -webkit-grabbing;
-    cursor: grabbing; }
-  [data-scroll-direction="vertical"] .c-scrollbar_thumb {
-    right: auto;
-    bottom: 0; }
-
+  cursor: grab;
+}
+.has-scroll-dragging .c-scrollbar_thumb {
+  cursor: -webkit-grabbing;
+  cursor: grabbing;
+}
+[data-scroll-direction="vertical"] .c-scrollbar_thumb {
+  right: auto;
+  bottom: 0;
+}
 
 :root {
   --vh: 1vh;
@@ -86,12 +110,10 @@ body {
   background-color: black;
 }
 
-
 .text-gray {
   --tw-text-opacity: 1;
-  color: rgba(184,184,184,var(--tw-text-opacity));
+  color: rgba(184, 184, 184, var(--tw-text-opacity));
 }
-
 
 .animation {
   margin: 0px;
@@ -146,4 +168,3 @@ body {
   height: 51.8rem;
   overflow: hidden;
 }
-
