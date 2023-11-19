@@ -26,14 +26,14 @@ const AboutPage: React.FC<AboutPageProps> = ({}) => {
   });
 
   return (
-    <div className="relative top-0 left-0 w-full h-[150vh]">
-      <div className="grid top-0 left-0 h-screen w-full">
+    <div className="relative top-0 left-0 w-full mih-h-full" data-scroll-container>
+      <div className="grid top-0 left-0 h-screen w-full" >
         <div
           className="flex items-center justify-center relative"
           ref={container}
         >
           <div className="hidden absolute top-1/2 left-1/2 text-white text-center -translate-x-1/2 -translate-y-1/2 z-10 text-3xl sm:text-2xl leading-[1.1 cursor-pointer">
-            <h2 className="text-white ">Rizky Syahri Ramadhan</h2>
+            <h2 data-scroll className="text-white ">Rizky Syahri Ramadhan</h2>
           </div>
           <div
             className="top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 portrait:h-[112.5vw] portrait:w-[75vw] landscape:h-[75vh] landscape:w-[50vh] "
@@ -45,6 +45,7 @@ const AboutPage: React.FC<AboutPageProps> = ({}) => {
               className="object-cover w-full h-full rotate-[5deg]"
               fill
               priority
+              data-scroll
             />
           </div>
 
@@ -54,8 +55,8 @@ const AboutPage: React.FC<AboutPageProps> = ({}) => {
           </div>
         </div>
         <div className="px-8 mt-[8rem] absolute top-full sm:mt-[12rem] sm:grid grid-cols-12 gap-x-[2rem] pb-[6rem] text-white">
-          <span className="block col-span-3 lg:col-span-5">About me</span>
-          <p className="col-span-8 lg:col-span-6 text-md md:text-2xl leading-normal mt-2 sm:mt-0">
+          <span data-scroll className="block col-span-3 lg:col-span-5">About me</span>
+          <p data-scroll className="col-span-8 lg:col-span-6 text-md md:text-2xl leading-normal mt-2 sm:mt-0">
             I'm an Web Developer and I'am graduate of vocational high school.
             Always trying to be honest and kind to others. Have a very
             optimistic goal which is to grow at what i can do and always looking
