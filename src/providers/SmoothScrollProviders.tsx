@@ -29,6 +29,7 @@ export const SmoothScrollProviders = ({
               el: document.querySelector("[data-scroll-container]"),
               ...options,
               scrollFromAnywhere: true,
+              smoothTouch: true,
               smartphone: {
                 smooth: true,
               },
