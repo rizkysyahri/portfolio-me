@@ -24,6 +24,7 @@ const AboutPage: React.FC<AboutPageProps> = ({}) => {
   });
 
   return (
+
     <>
       <div
         className="relative top-0 left-0 w-full mih-h-full"
@@ -46,6 +47,7 @@ const AboutPage: React.FC<AboutPageProps> = ({}) => {
               alt="..."
               className="object-cover w-full h-full -rotate-[5deg]"
               fill
+
               data-scroll
             />
           </div>
@@ -63,6 +65,7 @@ const AboutPage: React.FC<AboutPageProps> = ({}) => {
             </div>
           </div>
         </div>
+
         <div className="px-8 mt-[8rem] sm:mt-[12rem] sm:grid grid-cols-12 gap-x-[2rem] pb-[6rem] text-white">
           <span data-scroll className="block col-span-3 lg:col-span-5">
             About me
@@ -76,6 +79,7 @@ const AboutPage: React.FC<AboutPageProps> = ({}) => {
             honest and kind to others. Have a very optimistic goal which is to
             grow at what i can do and always looking for something new to learn
             and improve.{" "}
+
           </p>
 
           <span className="block col-span-3 lg:col-span-5 mt-[6rem]">
