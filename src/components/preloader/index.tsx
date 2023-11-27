@@ -28,10 +28,10 @@ export default function Preloader() {
 
   const opacity = {
     initial: {
-      opacity: "0",
+      opacity: 0,
     },
     enter: {
-      opacity: "1",
+      opacity: 1,
       transition: { duration: 0.2, delay: 0.2 },
     },
   };

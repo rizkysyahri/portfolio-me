@@ -196,6 +196,7 @@ html.lenis {
 
 :root {
   --vh: 1vh;
+  --wrap-width: 98%;
 }
 
 .h-full-screen {
@@ -206,6 +207,12 @@ body {
   margin: 0px;
   height: auto;
   background-color: black;
+}
+
+@media (min-width: 1024px) {
+  body {
+    overflow: hidden;
+  }
 }
 
 .text-gray {
@@ -266,3 +273,136 @@ body {
   height: 51.8rem;
   overflow: hidden;
 }
+
+/* about page */
+.ulafemxcbouEhfejn {
+  transform: translateY(100%);
+}
+
+.KEafUhkjfufhLFUlgfe {
+  opacity: 0;
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0) 50%,
+    rgba(0, 0, 0, 0.5) 100%
+  );
+}
+
+.h-full-screen {
+  height: calc(var(--vh) * 100);
+}
+
+.project-css {
+  height: min(764px, 46.35922vw);
+  margin-top: 6px;
+  position: relative;
+  width: 50%;
+}
+
+.Ukudgdwmb7kawbdk {
+  margin-left: calc((100% - var(--wrap-width)) * 0.5);
+  width: var(--wrap-width);
+}
+
+.due-light .wrap-ml {
+  border-bottom: 1.34px solid #ccc;
+
+}
+
+/* .wrap-ml {
+  margin-left: calc((100% - var(--wrap-width)) * 0.5);
+  width: var(--wrap-width);
+} */
+
+.due .wrap-ml {
+  display: flex;
+}
+
+.due-light a:first-child {
+  border-right: 1.34px solid #ccc;
+}
+
+.title-1 {
+  font-size: min(200px, 12.13592vw);
+  letter-spacing: -0.02em;
+  line-height: min(192px, 11.65049vw);
+  margin-left: min(16px, 0.97087vw);
+  opacity: 0.58;
+  padding-top: min(53px, 3.21602vw);
+  pointer-events: none;
+  transition: 0.3s;
+}
+
+.due a {
+  height: min(764px, 46.35922vw);
+  margin-top: 6px;
+  position: relative;
+  width: 50%;
+}
+
+
+
+@media (max-width: 700px) {
+  .due .wrap-ml {
+    border-bottom: none;
+    display: block;
+  }
+}
+@media (max-width: 700px) {
+  .due a:first-child {
+    border-right: none;
+  }
+}
+
+@media (max-width: 700px) {
+  .due-light a {
+    border-bottom: 1.34px solid #ccc;
+    
+  }
+}
+
+@media (max-width: 700px) {
+  .due a {
+    display: block;
+    height: 97.87234vw;
+    margin-top: 0;
+    width: 100%;
+  }
+}
+
+@media (max-width: 700px) {
+  .title-1 {
+    font-size: min(80px,21.2766vw);
+    letter-spacing: -.01em;
+    line-height: min(72px,19.14894vw);
+    margin-left: 2rem;
+    padding-top: min(24px,6.38298vw);
+  }
+}
+
+@media (max-width: 700px) {
+  .title-small {
+    width: 120px;
+  }
+}
+
+@media (max-width: 700px) {
+  .title-2 {
+    bottom: 30px;
+    left: 2rem;
+  }
+}
+
+@media (max-width: 700px) {
+  .title-large {
+    width: 200px;
+  }
+}
+
+
+
+
+/* about page */

@@ -28,6 +28,7 @@ export const SmoothScrollProviders = ({
             new LocomotiveScroll({
               el: document.querySelector("[data-scroll-container]"),
               ...options,
+              wrapper: window,
               scrollFromAnywhere: true,
               smoothTouch: true,
               smartphone: {
