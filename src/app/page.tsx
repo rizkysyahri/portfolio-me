@@ -7,13 +7,12 @@ import { AnimatePresence } from "framer-motion";
 import gsap from "gsap";
 import { useRouter } from "next/navigation";
 
-
 export default function Home() {
   const [isLoading, setIsLoading] = React.useState(true);
   const [timeline, setTimeline] = React.useState<gsap.core.Timeline | null>(
     null
   );
-  const router = useRouter()
+  const router = useRouter();
 
   React.useEffect(() => {
     (() => {
