@@ -52,12 +52,12 @@ export const scaleCenterImage = (
   return tl;
 };
 
-export const moveUpTitle = (centerImageTitleRef: any) => {
-  return gsap.to(centerImageTitleRef, {
-    yPercent: 100,
-    duration: 1,
-  });
-};
+// export const moveUpTitle = (centerImageTitleRef: any) => {
+//   return gsap.to(centerImageTitleRef, {
+//     yPercent: 100,
+//     duration: 1,
+//   });
+// };
 
 export const setBackgroundState = (centerSectionRef: any) => {
   gsap.set(centerSectionRef, { scale: 1.5 });
@@ -65,9 +65,10 @@ export const setBackgroundState = (centerSectionRef: any) => {
 
 export const moveBackgroundProject = (
   centerSectionWrapperRef: any,
-  centerSectionRef: any
+  centerSectionRef: any,
 ) => {
   const tl = gsap.timeline();
+  const portraitQuery = window.matchMedia("(orientation: portrait)");
 
   tl.to(centerSectionWrapperRef, {
     width: "100%",
@@ -80,5 +81,44 @@ export const moveBackgroundProject = (
     0
   );
 
+  const handleOrientationChange = () => {
+    if (portraitQuery.matches) {
+      tl.to(centerSectionWrapperRef, {
+        width: "75vw",
+        height: "112.5vw",
+        rotate: "-5deg",
+      }).to(
+        centerSectionRef,
+        {
+          scale: 1,
+        },
+        0
+      );
+    } else {
+      tl.to(centerSectionWrapperRef, {
+        width: "50vh",
+        height: "75vh",
+        rotate: "-5deg",
+      }).to(
+        centerSectionRef,
+        {
+          scale: 1,
+        },
+        0
+      );
+    }
+  };
+
+  handleOrientationChange();
+
+  portraitQuery.addListener(handleOrientationChange);
+
   return tl;
+};
+
+export const moveUpTitle = (centerImageTitleRef: any) => {
+  return gsap.to(centerImageTitleRef, {
+    yPercent: 100,
+    duration: 1,
+  });
 };

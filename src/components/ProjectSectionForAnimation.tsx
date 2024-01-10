@@ -2,6 +2,7 @@ import * as React from "react";
 import Link from "next/link";
 import {
   moveBackgroundProject,
+  scaleCenterImage,
   setBackgroundState,
 } from "@/helpers/AnimationImagesProjects";
 
@@ -23,7 +24,7 @@ const ProjectSectionForAnimation: React.FC<ProjectSectionForAnimationProps> = ({
         .add(
           moveBackgroundProject(
             centerSectionWrapperRef.current,
-            centerSectionRef.current
+            centerSectionRef.current,
           )
         );
   }, [timeline]);

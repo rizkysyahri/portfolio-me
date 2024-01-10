@@ -24,7 +24,7 @@ const AboutPage: React.FC<AboutPageProps> = ({}) => {
   const titleRef = React.useRef(null);
   const textRef = React.useRef(null);
   const container = React.useRef(null);
-  const router = useRouter()
+  const router = useRouter();
 
   React.useEffect(() => {
     titleAnimation(titleRef.current);
@@ -40,7 +40,7 @@ const AboutPage: React.FC<AboutPageProps> = ({}) => {
       setTimeline(tl);
     });
 
-    return () => ctx.revert()
+    return () => ctx.revert();
   }, []);
 
   return (
@@ -127,7 +127,7 @@ const AboutPage: React.FC<AboutPageProps> = ({}) => {
             </Link>
           </ul>
         </div>
-        <ProjectSectionForAnimation timeline={timeline}/>
+        <ProjectSectionForAnimation timeline={timeline} />
 
         <footer className="px-8 pb-8 flex justify-between mt-[6rem] sm:mt-[12rem]">
           <div className="absolute bottom-0 left-0 w-full px-8 pb-8 flex items-center justify-center">

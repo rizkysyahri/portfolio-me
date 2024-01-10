@@ -216,11 +216,6 @@ body {
   background-color: black;
 }
 
-/* @media (min-width: 1024px) {
-  body {
-    overflow: hidden;
-  }
-} */
 
 .text-gray {
   --tw-text-opacity: 1;
