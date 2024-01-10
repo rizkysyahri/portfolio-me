@@ -16,4 +16,23 @@ export const Icons = {
       />
     </svg>
   ),
+
+  line: (props: IconProps) => (
+    <svg
+      viewBox="0 0 100 10"
+      aria-hidden="true"
+      preserveAspectRatio="none"
+      {...props}
+    >
+      <path
+        // style="fill: none;stroke-width: 2px;stroke-linecap: round;stroke-dashoffset: 0;stroke-dasharray: none;"
+        fill="white"
+        strokeWidth="2px"
+        strokeLinecap="round"
+        strokeDashoffset="0"
+        strokeDasharray="none"
+        d="M2,2.5027319295252477C16.650259698283016,7.775772638534024,40.803027458453876,2.786536224233977,98,5.944530373733199"
+      ></path>
+    </svg>
+  ),
 };
