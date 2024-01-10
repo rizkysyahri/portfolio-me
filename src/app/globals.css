@@ -203,7 +203,6 @@ html.lenis {
   height: calc(var(--vh) * 100);
 }
 
-html,
 body {
   margin: 0px;
   height: auto;
