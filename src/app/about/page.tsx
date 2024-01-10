@@ -8,20 +8,40 @@ import {
   textAnimation,
   titleAnimation,
 } from "@/helpers/AnimateForText";
+import { Icons } from "@/components/Icons";
+import ProjectSectionForAnimation from "@/components/ProjectSectionForAnimation";
+import gsap from "gsap";
+import { useRouter } from "next/navigation";
 
 interface AboutPageProps {}
 
 const AboutPage: React.FC<AboutPageProps> = ({}) => {
+  const [timeline, setTimeline] = React.useState<gsap.core.Timeline | null>(
+    null
+  );
+
   const overlayRef = React.useRef(null);
   const titleRef = React.useRef(null);
   const textRef = React.useRef(null);
   const container = React.useRef(null);
+  const router = useRouter()
 
   React.useEffect(() => {
     titleAnimation(titleRef.current);
     textAnimation(textRef.current);
-    // fadeInOverlay(overlayRef.current);
   });
+
+  React.useEffect(() => {
+    const ctx = gsap.context(() => {
+      const tl = gsap.timeline({
+        paused: true,
+        // onComplete: () => router.push("/project")
+      });
+      setTimeline(tl);
+    });
+
+    return () => ctx.revert()
+  }, []);
 
   return (
     <>
@@ -29,8 +49,8 @@ const AboutPage: React.FC<AboutPageProps> = ({}) => {
         className="relative top-0 left-0 w-full mih-h-full"
         ref={container}
         data-scroll-container
+        data-scroll
       >
-        {/* <div className="KEafUhkjfufhLFUlgfe" ref={overlayRef}></div> */}
         <div className="relative flex items-center justify-center w-full h-full-screen">
           <div className="hidden absolute top-1/2 left-1/2 text-white text-center -translate-x-1/2 -translate-y-1/2 z-10 text-3xl sm:text-2xl leading-[1.1 cursor-pointer">
             <h2 data-scroll className="text-white">
@@ -64,22 +84,28 @@ const AboutPage: React.FC<AboutPageProps> = ({}) => {
           </div>
         </div>
         <div className="px-8 mt-[8rem] sm:mt-[12rem] sm:grid grid-cols-12 gap-x-[2rem] pb-[6rem] text-white">
-          <span data-scroll className="block col-span-3 lg:col-span-5">
+          <span data-scroll className="block col-span-3 lg:col-span-5 relative">
             About me
+            <Icons.line className="w-[20%] sm:w-[50%] lg:w-[20%] h-3 absolute stroke-current" />
           </span>
           <p
             data-scroll
             className="col-span-8 lg:col-span-6 text-md md:text-2xl leading-normal mt-2 sm:mt-0 text-gray"
           >
-            I'm an <span className="text-2xl text-white">Web Developer</span>{" "}
+            I'm an{" "}
+            <span className="text-2xl text-white relative">
+              Web Developer
+              <Icons.line className="w-full h-3 absolute bottom-[-7px] left-0 stroke-current text-gray" />
+            </span>{" "}
             and I'am graduate of vocational high school. Always trying to be
             honest and kind to others. Have a very optimistic goal which is to
             grow at what i can do and always looking for something new to learn
             and improve.{" "}
           </p>
 
-          <span className="block col-span-3 lg:col-span-5 mt-[6rem]">
+          <span className="block col-span-3 lg:col-span-5 mt-[6rem] relative whitespace-nowrap">
             Social
+            <Icons.line className="w-[20%] sm:w-[50%] lg:w-[20%] h-3 absolute stroke-current bottom-[-4px] left-0 md:bottom-[-2px]" />
           </span>
           <ul className="col-span-8 lg:col-span-5 text-md md:text-2xl leading-normal mt-2 sm:mt-[6rem] text-gray">
             <Link href="mailto:ramadhancai@gmail.com">
@@ -101,23 +127,7 @@ const AboutPage: React.FC<AboutPageProps> = ({}) => {
             </Link>
           </ul>
         </div>
-
-        <div className="due due-light">
-          <div className="wrap-ml bg-white">
-            <Link href="/project">
-              <h2 className="title-1">Project</h2>
-              <div className="w-[140px] bottom-5 left-6 opacity-[.58] absolute title-2 title-small">
-                Latest Updates
-              </div>
-            </Link>
-            <Link href="/contact">
-              <h2 className="title-1">Contact</h2>
-              <div className="w-[224px] bottom-5 left-6 opacity-[.58] absolute title-2 title-large">
-                Latest Updates and Contact
-              </div>
-            </Link>
-          </div>
-        </div>
+        <ProjectSectionForAnimation timeline={timeline}/>
 
         <footer className="px-8 pb-8 flex justify-between mt-[6rem] sm:mt-[12rem]">
           <div className="absolute bottom-0 left-0 w-full px-8 pb-8 flex items-center justify-center">

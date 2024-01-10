@@ -9,19 +9,14 @@ export default function Preloader() {
     "Sir",
     "Mr",
     "Mrs",
-    "Buddy",
-    "There",
-    "Dude",
     "Call Me Syahri",
   ];
 
   // variant for motion //
   const slideUp = {
-    initial: {
-      y: "0",
-    },
     exit: {
-      y: "-100vh",
+      // y: "-100vh",
+      opacity: 0,
       transition: { duration: 0.8, ease: [0.76, 0, 0.24, 1], delay: 0.2 },
     },
   };
@@ -84,6 +79,14 @@ export default function Preloader() {
             initial="initial"
             variants={opacity}
             animate="enter"
+            exit={{
+              opacity: 0,
+              // transition: {
+              //   duration: 0.8,
+              //   ease: [0.76, 0, 0.24, 1],
+              //   delay: 0.2,
+              // },
+            }}
             className="text-white text-[42px] flex items-center absolute z-[1]"
           >
             <span className="block w-[10px] h-[10px] bg-white rounded-[50%] mr-[10px]"></span>
