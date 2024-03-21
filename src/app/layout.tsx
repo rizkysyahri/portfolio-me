@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { GeistSans, GeistMono } from "geist/font";
 import "./globals.css";
-import Header from "@/components/Header";
 import { SmoothScrollProviders } from "@/providers/SmoothScrollProviders";
 
 export const metadata: Metadata = {
@@ -16,12 +15,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={GeistSans.className}>
-        <Header />
-
-          <SmoothScrollProviders options={{ smooth: true, smoothTouch: true }}>
-            {children}
-          </SmoothScrollProviders>
+      <body className={GeistSans.className} data-barba="wrapper">
+        <SmoothScrollProviders options={{ smooth: true, smoothTouch: true }}>
+          {children}
+        </SmoothScrollProviders>
       </body>
     </html>
   );

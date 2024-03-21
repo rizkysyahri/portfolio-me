@@ -217,10 +217,13 @@ body {
 }
 
 
-
 .text-gray {
   --tw-text-opacity: 1;
   color: rgba(184, 184, 184, var(--tw-text-opacity));
+}
+.bg-gray-line {
+  --tw-text-opacity: 1;
+  background: rgba(184, 184, 184, var(--tw-text-opacity));
 }
 
 .animation {
@@ -340,9 +343,8 @@ body {
 
 .Ugfhkaeuka {
   height: min(764px, 46.35922vw);
-  margin-top: 6px;
   position: relative;
-  width: 50%;
+  width: 100%;
 }
 
 [data-image-section] {
@@ -352,6 +354,15 @@ body {
   transform: translate(-50%, -50%);
   transform-origin: left left;
   z-index: 2;
+}
+
+
+@media (min-width: 700px) {
+  .Ugfhkaeuka {
+    width: 50%;
+    height: min(764px, 46.35922vw);
+    margin-top: 6px;
+  }
 }
 
 @media (max-width: 700px) {
@@ -411,3 +422,122 @@ body {
 }
 
 /* about page */
+
+
+.load-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.load-screen {
+  position: relative;
+  padding-top: 0px;
+  padding-left: 0px;
+  padding-right: 0px;
+  background-color: #19bc8b;
+  width: 0%;
+  height: 100%;
+}
+
+.transition {
+  position: absolute;
+  z-index: 2;
+  background-color: #fff;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  pointer-events: none;
+  -webkit-transform: scaleY(0);
+  transform: scaleY(0);
+}
+
+.oi {
+  height: 100vh;
+  background-color: #161616;
+  width: 100%;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 0%);
+}
+
+.textAnimation {
+  position: relative;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8); /* Warna hitam dengan opasitas */
+  z-index: 1000; /* Pastikan overlay muncul di atas konten lain */
+  animation: fadeOut 1s ease; /* Animasi fading */
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1; /* Awalnya opasitas penuh */
+  }
+  100% {
+    opacity: 0; /* Akhirnya opasitas nol */
+  }
+}
+
+.textAn {
+  animation: fadeIn 3s ease;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    duration: 1.25;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.textAn2 {
+  animation: fadeInOut 10s ease;
+}
+
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+    duration: 1.5;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+/* project page */
+
+.ratio-1-1 {
+  padding-top: 100%;
+}
+
+.ratio-2-1 {
+  padding-top: 62.5%;
+}
+
+.zoom-img {
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0);
+}
+
+.zoom-img-container:hover .zoom-img {
+  transform: translateY(-20px);
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+}
+
