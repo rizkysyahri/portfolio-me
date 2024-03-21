@@ -52,7 +52,6 @@ export const scaleCenterImage = (
   return tl;
 };
 
-
 export const setBackgroundState = (centerSectionRef: any) => {
   gsap.set(centerSectionRef, { scale: 1.5 });
 };
@@ -61,7 +60,6 @@ export const moveBackgroundProject = (
   centerSectionWrapperRef: any,
   centerSectionRef: any,
   rightImageRef: any
-
 ) => {
   const tl = gsap.timeline();
   const portraitQuery = window.matchMedia("(orientation: portrait)");
@@ -69,7 +67,6 @@ export const moveBackgroundProject = (
   tl.to(centerSectionWrapperRef, {
     width: "100%",
     height: "100vh",
-
   })
     .to(
       centerSectionRef,
@@ -87,15 +84,6 @@ export const moveBackgroundProject = (
       },
       0
     );
-
-  }).to(
-    centerSectionRef,
-    {
-      scale: 1,
-    },
-    0
-  );
-
 
   const handleOrientationChange = () => {
     if (portraitQuery.matches) {
