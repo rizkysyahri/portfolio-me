@@ -12,6 +12,7 @@ const AboutPage: React.FC<AboutPageProps> = ({}) => {
   const [timeline, setTimeline] = React.useState<gsap.core.Timeline | null>(
     null
   );
+  
   const router = useRouter();
 
   React.useEffect(() => {
