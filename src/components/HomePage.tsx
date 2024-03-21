@@ -17,9 +17,6 @@ const HomePage: React.FC<HomePageProps> = ({ timeline }) => {
   const centerImageTitleRef = React.useRef(null);
 
   React.useEffect(() => {
-    // console.log("centerImageWrapperRef:", centerImageWrapperRef);
-    // console.log("centerImageRef:", centerImageRef);
-
     timeline &&
       timeline
         .add(setInitialState(centerImageRef.current))
