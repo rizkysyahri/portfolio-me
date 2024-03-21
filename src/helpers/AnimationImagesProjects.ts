@@ -92,8 +92,7 @@ export const moveBackgroundProject = (
         height: "112.5vw",
         rotate: "-5deg",
       }).to(
-        centerSectionRef,
-        {
+        centerSectionRef, {
           scale: 1,
         },
         0
