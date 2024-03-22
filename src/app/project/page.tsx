@@ -15,7 +15,6 @@ const Page: React.FC<PageProps> = ({}) => {
         data-barba-namespace="project"
       >
         <NavProject />
-
         <div className="mt-32 px-4">
           <ProjectPage />
         </div>

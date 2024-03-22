@@ -13,6 +13,7 @@ import gsap from "gsap";
 import { useRouter } from "next/navigation";
 import { pageTransitionScreen } from "@/helpers/AnimationImagesProjects";
 import Navbar from "./header/Navbar";
+import Footer from "./Footer";
 
 interface AboutPagesProps {
   timeline: any;
@@ -36,17 +37,13 @@ const AboutPages: React.FC<AboutPagesProps> = ({ timeline }) => {
         pageTransitionScreen(pageTransition.current, pageOverlay.current)
       );
   });
-  
+
   return (
-    <div ref={pageOverlay}>
+    <div ref={pageOverlay} data-scroll-container>
       <div ref={pageTransition}>
         <Navbar />
 
-        <div
-          className="relative top-0 left-0 w-full mih-h-full"
-          data-scroll-container
-          data-scroll
-        >
+        <div className="relative top-0 left-0 w-full mih-h-full">
           <div className="relative flex items-center justify-center w-full h-full-screen">
             <div className="hidden absolute top-1/2 left-1/2 text-white text-center -translate-x-1/2 -translate-y-1/2 z-10 text-3xl sm:text-2xl leading-[1.1 cursor-pointer">
               <h2 data-scroll className="text-white">
@@ -144,19 +141,7 @@ const AboutPages: React.FC<AboutPagesProps> = ({ timeline }) => {
             </div>
           </div>
 
-          <footer className="px-8 pb-8 flex justify-between mt-[6rem] sm:mt-[12rem]">
-            <div className="absolute bottom-0 left-0 w-full px-8 pb-8 flex items-center justify-center">
-              <p className="text-white text-sm font-light hidden md:block">
-                Build by Rizky Syahri Ramadhan{" "}
-              </p>
-            </div>
-            <p className="text-white text-sm font-light justify-end flex absolute bottom-0 right-0 w-full px-8 pb-8">
-              Portfolio
-            </p>
-            <p className="text-white text-sm font-light justify-start flex absolute bottom-0 right-0 w-full px-8 pb-8">
-              @2023
-            </p>
-          </footer>
+          <Footer />
         </div>
       </div>
     </div>

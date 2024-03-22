@@ -5,6 +5,7 @@ import {
   textAnimationProject,
   textAnimationProjectDifinition,
 } from "@/helpers/AnimateForText";
+import Footer from "./Footer";
 
 interface ProjectPageProps {}
 
@@ -74,7 +75,7 @@ const ProjectPage: React.FC<ProjectPageProps> = ({}) => {
           </div>
         </Link>
       </div>
-      
+      <Footer />
     </>
   );
 };

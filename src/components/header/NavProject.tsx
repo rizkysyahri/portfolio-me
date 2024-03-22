@@ -24,12 +24,23 @@ const NavProject: React.FC<NavProjectProps> = ({}) => {
   const textNavRef = React.useRef(null);
   const textNavTimeRef = React.useRef(null);
   const [localTime, setIsLocalTime] = React.useState(new Date());
+  const [showNavbar, setShowNavbar] = React.useState(true);
+  const [prevScrollPos, setPrevScrollPos] = React.useState(0);
 
   React.useEffect(() => {
     titleNameAnimation(titleNameRef.current);
     textNavAnimation(textNavRef.current);
     textNavTimeAnimation(textNavTimeRef.current);
-  });
+
+    const handleScroll = () => {
+      const currentScrollPos = window.pageYOffset;
+      setShowNavbar(prevScrollPos > currentScrollPos || currentScrollPos < 100);
+      setPrevScrollPos(currentScrollPos);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [prevScrollPos]);
 
   React.useEffect(() => {
     const interval = setInterval(() => {
@@ -39,7 +50,11 @@ const NavProject: React.FC<NavProjectProps> = ({}) => {
   }, []);
 
   return (
-    <div className="fixed flex z-10 top-0 text-white p-4 justify-between w-full font-normal box-border items-center">
+    <div
+      className={`fixed flex z-10 top-0 text-white p-4 justify-between w-full font-normal box-border items-center transition-opacity duration-300 ${
+        showNavbar ? "opacity-100" : "opacity-0"
+      }`}
+    >
       <Link href="/" className="block overflow-hidden">
         <div
           className="flex pointer ulafemxcbouEhfejn text-2xl md:text-xl"
