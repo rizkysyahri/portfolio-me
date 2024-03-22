@@ -14,9 +14,17 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body className={GeistSans.className} data-barba="wrapper">
-        <SmoothScrollProviders options={{ smooth: true, smoothTouch: true }}>
+        <SmoothScrollProviders
+          options={{
+            smooth: true,
+            mobile: {
+              smooth: true,
+            },
+            tablet: { smooth: true },
+          }}
+        >
           {children}
         </SmoothScrollProviders>
       </body>

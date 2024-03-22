@@ -1,5 +1,5 @@
 import Link from "next/link";
-import React from "react";
+import * as React from "react";
 import { LocalDateTime } from "../LocalTime";
 import { Icons } from "../Icons";
 
@@ -16,6 +16,19 @@ let navItems = [
 
 export default function Navbar() {
   const [localTime, setIsLocalTime] = React.useState(new Date());
+  const [showNavbar, setShowNavbar] = React.useState(true);
+  const [prevScrollPos, setPrevScrollPos] = React.useState(0);
+
+  React.useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollPos = window.pageYOffset;
+      setShowNavbar(prevScrollPos > currentScrollPos || currentScrollPos < 100);
+      setPrevScrollPos(currentScrollPos);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [prevScrollPos]);
 
   React.useEffect(() => {
     const interval = setInterval(() => {
@@ -25,7 +38,11 @@ export default function Navbar() {
   }, []);
 
   return (
-    <div className="fixed flex z-10 top-0 text-white p-4 justify-between w-full font-normal box-border items-center">
+    <div
+      className={`fixed flex z-10 top-0 text-white p-4 justify-between w-full font-normal box-border items-center transition-opacity duration-300 ${
+        showNavbar ? "opacity-100" : "opacity-0"
+      }`}
+    >
       <Link href="/">
         <div className="flex pointer text-2xl md:text-xl">
           <p className="animation">©</p>
@@ -36,7 +53,7 @@ export default function Navbar() {
         </div>
       </Link>
 
-      <div className="block items-center justify-center overflow-hidden mr-16">
+      <div className="hidden md:block items-center justify-center overflow-hidden mr-16">
         <p className="text-xl text-white">
           Local Time : <LocalDateTime date={localTime} />
         </p>
@@ -46,12 +63,16 @@ export default function Navbar() {
         {navItems.map((data, index) => {
           return (
             <li className="leading-none relative group" key={index}>
-              <Link href={data.href} scroll={false} className="text-2xl md:text-xl flex">
+              <Link
+                href={data.href}
+                scroll={false}
+                className="text-2xl md:text-xl flex"
+              >
                 {data.title}
                 <span className=" opacity-0 text-[1.35em] transition-opacity duration-300 group-hover:opacity-100">
                   .
                 </span>
-                <Icons.arrowDown className="w-7 h-7"/>
+                <Icons.arrowDown className="w-7 h-7" />
               </Link>
             </li>
           );
