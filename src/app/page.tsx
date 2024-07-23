@@ -1,113 +1,110 @@
+"use client";
+
+import MaxWidthWrapper from "@/components/MaxWidthWrapper";
 import Image from "next/image";
+import Link from "next/link";
+import { motion } from "framer-motion";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">src/app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:size-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+    <main style={{ scrollBehavior: "smooth" }}>
+      <section className="flex items-center justify-center pt-20">
+        <MaxWidthWrapper>
+          <div className="relative overflow-hidden w-full h-full flex justify-center items-center z-10">
+            <motion.div
+              initial={{ y: "0%", scale: 1 }}
+              animate={{
+                y: "100%",
+                scale: [1, 1],
+                transition: { duration: 1, delay: 1, ease: [0.16, 1, 0.3, 1] },
+              }}
+              className="absolute w-full h-full max-w-screen-lg max-h-screen portrait:h-[112.5vw] portrait:w-[75vw] landscape:h-[75vh] landscape:w-[50vh] bg-black z-10"
+            ></motion.div>
+            <div className="relative w-full h-full portrait:h-[112.5vw] portrait:w-[75vw] landscape:h-[75vh] landscape:w-[50vh]">
+              <Image
+                src="https://res.cloudinary.com/rizkysyahri/image/upload/v1698762744/chai_arvpqk.jpg"
+                alt="Image Reveal"
+                className="object-cover w-full h-full "
+                fill
+              />
+            </div>
+          </div>
+
+          <div className="flex justify-between items-center text-xs sm:text-base z-[100] mt-32">
+            <div className="block overflow-hidden">
+              <p>Rizky Syahri Ramadhan</p>
+            </div>
+            <div>
+              <p>@me</p>
+            </div>
+          </div>
+        </MaxWidthWrapper>
+      </section>
+
+      <section>
+        <MaxWidthWrapper>
+          <div className="mt-[8rem] sm:mt-[12rem] sm:grid grid-cols-12 gap-x-[2rem] pb-[6rem]">
+            <span className="block col-span-3 lg:col-span-5 relative">
+              About me
+            </span>
+            <p className="col-span-8 lg:col-span-6 text-md md:text-2xl leading-normal mt-2 sm:mt-0 text-gray">
+              I&apos;m an Independent Front End Developer and I&apos;am graduate
+              of vocational high school. Always trying to be honest and kind to
+              others. Have a very optimistic goal which is to grow at what i can
+              do and always looking for something new to learn and improve.
+            </p>
+
+            <span className="block col-span-3 lg:col-span-5 mt-[6rem] relative">
+              Social
+            </span>
+            <ul className="col-span-8 lg:col-span-5 text-md md:text-2xl leading-normal mt-2 sm:mt-[6rem] text-gray">
+              <Link href="mailto:ramadhancai@gmail.com">
+                <li className="leading-none relative group">
+                  Email{" "}
+                  <span className="absolute inline-block opacity-0 transition-opacity duration-300 group-hover:opacity-100 ">
+                    .
+                  </span>
+                </li>
+              </Link>
+              <Link href="https://www.instagram.com/syahrrrh/">
+                <li className="leading-none relative group">
+                  Instagram{" "}
+                  <span className="absolute inline-block opacity-0 transition-opacity duration-300 group-hover:opacity-100 ">
+                    .
+                  </span>
+                </li>
+              </Link>
+              <Link href="https://www.linkedin.com/in/rizkysyahri/">
+                <li className="leading-none relative group">
+                  Linkedln{" "}
+                  <span className="absolute inline-block opacity-0 transition-opacity duration-300 group-hover:opacity-100 ">
+                    .
+                  </span>
+                </li>
+              </Link>
+            </ul>
+          </div>
+        </MaxWidthWrapper>
+      </section>
+
+      <section>
+        <div className="flex flex-col md:flex-row relative h-[700px] w-full bg-white">
+          <Link
+            href="/project"
+            scroll={false}
+            className="flex relative items-center justify-center w-full h-full border-b-[1.34px] md:border-r-[1.34px] leading-none border-solid border-[#ccc]"
           >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+            <h2 className="text-8xl opacity-[0.58] text-gray">Project</h2>
+          </Link>
+          <Link
+            href="/contact"
+            scroll={false}
+            className="flex relative items-center justify-center w-full h-full border-t-[1.34px] md:border-l-[1.34px] leading-none border-solid border-[#ccc]"
+          >
+            <h2 className="text-8xl opacity-[0.58] text-gray">Contact</h2>
+          </Link>
         </div>
-      </div>
-
-      <div className="relative z-[-1] flex place-items-center before:absolute before:h-[300px] before:w-full before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 sm:before:w-[480px] sm:after:w-[240px] before:lg:h-[360px]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className="mb-32 grid text-center lg:mb-0 lg:w-full lg:max-w-5xl lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Docs{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Learn{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Templates{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Explore starter templates for Next.js.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Deploy{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-balance text-sm opacity-50">
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
+      </section>
     </main>
   );
 }
