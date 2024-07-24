@@ -85,17 +85,32 @@ const Page = ({ params }: { params: { slug: string } }) => {
         )}
       >
         <MaxWidthWrapper className="flex flex-col">
-          <div className="mt-40 md:mt-48">
-            <h1 className="text-5xl md:text-7xl font-koulen">
+          <div className="mt-40 md:mt-48 overflow-hidden">
+            <motion.h1
+              initial={{ opacity: 0, y: "50%" }}
+              animate={{
+                opacity: 1,
+                y: "0%",
+                transition: { duration: 1, delay: 1, ease: [0.83, 0, 0.17, 1] },
+              }}
+              className="text-5xl md:text-7xl font-koulen"
+            >
               {selectedProject.title}
-            </h1>
+            </motion.h1>
           </div>
           <div className="flex flex-wrap items-center mt-40 mb-5">
-            <div className="flex items-center">
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{
+                opacity: 1,
+                transition: { duration: 1, delay: 1.3, ease: [0.83, 0, 0.17, 1] },
+              }}
+              className="flex items-center gap-2"
+            >
               <span>PROJECT</span>
               <span className="border border-[#bd9b5f] w-5 rotate-180" />
               <span className="">{selectedProject.title}</span>
-            </div>
+            </motion.div>
           </div>
         </MaxWidthWrapper>
       </section>
@@ -143,8 +158,7 @@ const Page = ({ params }: { params: { slug: string } }) => {
               "bg-[#142a1f] p-20": pathname.includes("/project/circle-app"),
             },
             {
-              "bg-[url('/images/ilustration1.png')] bg-cover bg-center":
-                pathname.includes("/project/swallet-app"),
+              "": pathname.includes("/project/swallet-app"),
             }
           )}
         >

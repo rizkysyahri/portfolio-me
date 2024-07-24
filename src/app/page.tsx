@@ -4,8 +4,13 @@ import MaxWidthWrapper from "@/components/MaxWidthWrapper";
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
+import { useEffect } from "react";
 
 export default function Home() {
+  useEffect(() => {
+    var e = ["color: purple", "font-size: 14px", "line-height: 10px", "padding: 10px 0"].join(";");
+    console.log("%c✦ 💜💜💜💜💜💜 Developed by Rizky Syahri Ramadhan 💜💜💜💜💜💜 ✦", e);
+  }, []);
   return (
     <main style={{ scrollBehavior: "smooth" }}>
       <section className="flex items-center justify-center pt-20">
@@ -97,7 +102,7 @@ export default function Home() {
             <h2 className="text-8xl opacity-[0.58] text-gray">Project</h2>
           </Link>
           <Link
-            href="/contact"
+            href="#"
             scroll={false}
             className="flex relative items-center justify-center w-full h-full border-t-[1.34px] md:border-l-[1.34px] leading-none border-solid border-[#ccc]"
           >
